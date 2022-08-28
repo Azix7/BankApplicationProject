@@ -1,0 +1,135 @@
+SUITE_NAME: Test
+
+TEST_NG_CONFIG_FILE: TestNG.xml
+
+selenium:
+    server: local
+    remote:
+        host: http://192.168.30.212:5566/wd/hub
+    #   port: 8443
+    browser: chrome
+            
+            
+    driverpath: "./src/test/resources/seleniumdriver/"
+    timeout: 60
+    
+url: https://s5-5-qa.sylob.local:8443/CochiseWeb/start.do
+testenv: qa
+
+
+##########################################################################################
+#
+#******* Testdata for preplan*******
+#
+########################################################################################## 
+
+
+##########################################################################################
+#
+#******* Testdata for Login and password*******
+#
+########################################################################################## 
+
+
+loginInfo:
+  
+    username: sylob
+    password: "s#5[born2BEWild]"
+    societe: S5_5_QA_AZIZ
+    
+
+##########################################################################################
+#
+#******* Testdata for Adding new Article*******
+#
+########################################################################################## 
+
+AddArticleFlow1:
+###### Identification #########
+  Code: PFB
+  Designation: new article PFB
+  Famille:  
+  Type: Pi�ce
+  UniteDeGestion1: 
+            CENTAINE (CEN)
+  UniteDeGestion2:          
+            CENTIMETRE (CMT)
+  UniteDeGestion3:          
+            PIECE-UNITE (PCE)  
+  PoidsUnitaire: 10
+###### Vente #########  
+  PrixDeVente: 50
+  NouveauPrixDeVente: 50
+###### Achat ######### 
+  Strategie1: A la commande
+  TypeDeGestion1: G�r� en stock  
+  TypeDeGestion2: Non g�r� en stock
+  
+  Strategie2: Sur stock
+  TypeDeGestion3: MRP
+  TypeDeGestion4: Non g�r� en stock  
+  TypeDeGestion5: point de commande
+  PolitiqueDeLotissement1: Lot par lot
+  PolitiqueDeLotissement2: Quantit� �conomique
+  UniteAchat: PIECE-UNITE (PCE)
+  DernierPrixAchat : 10
+###### Finance #######  
+  TypeTVA: NORMAL
+  ClassificationComptable: Marchandise 
+  ValoriseAu: Dernier prix achat
+  
+  
+AddArticleFlow2:
+###### Identification #########
+  Code: UC391-PF002
+  Designation: UC391 - Produit Fini 002
+  Famille:  
+  Type: Pi�ce
+  UniteDeGestion1: 
+            CENTAINE (CEN)
+  UniteDeGestion2:          
+            CENTIMETRE (CMT)
+  UniteDeGestion3:          
+            PIECE-UNITE (PCE)  
+  PoidsUnitaire: 10
+  
+  ###### Vente #########  
+  PrixDeVente: 50
+  NouveauPrixDeVente: 50
+  
+  ###### Achat ######### 
+  Strategie1: A la commande
+  TypeDeGestion1: G�r� en stock  
+  TypeDeGestion2: Non g�r� en stock
+  
+  Strategie2: Sur stock
+  TypeDeGestion3: MRP
+  TypeDeGestion4: Non g�r� en stock  
+  TypeDeGestion5: point de commande
+  PolitiqueDeLotissement1: Lot par lot
+  PolitiqueDeLotissement2: Quantit� �conomique
+  UniteAchat: PIECE-UNITE (PCE)
+  DernierPrixAchat : 10
+  
+  ###### Finance #######  
+  TypeTVA: NORMAL
+  ClassificationComptable: Marchandise 
+  ValoriseAu: Dernier prix achat
+  
+  
+  
+##########################################################################################
+#
+#******* Testdata for Castor CNGZ Merchant*******
+#
+########################################################################################## 
+  
+
+   
+    
+##########################################################################################
+#
+#******* Configurations for Email Module  *******
+#
+##########################################################################################
+

@@ -1,0 +1,60 @@
+SUITE_NAME: Test
+
+TEST_NG_CONFIG_FILE: TestNG.xml
+
+selenium:
+    server: local
+    remote:
+        host: http://192.168.30.212:5566/wd/hub
+    #   port: 8443
+    browser: firefox
+            
+            
+    driverpath: "./src/test/resources/seleniumdriver/"
+    timeout: 60
+    
+url: https://www.demo.guru99.com/V4/
+testenv: win
+
+
+##########################################################################################
+#
+#******* Testdata for preplan*******
+#
+########################################################################################## 
+
+
+##########################################################################################
+#
+#******* Testdata for Login and password*******
+#
+########################################################################################## 
+
+
+loginInfo:
+  
+    username: mngr433095
+    password: 'rArYsar'
+    societe: JEU_ESSAI
+    invalidUserName: invalid
+    invalidPassword: invalid
+##########################################################################################
+#
+#******* Testdata for Adding new Client*******
+#
+########################################################################################## 
+
+AddDonneeTechnique:
+  
+  DonneeTechniqueLancher: Gerer les donnees techniques
+  Code : Code
+  CodeArticle : AMB A
+  
+  
+  
+  
+  
+  
+  
+
+  
