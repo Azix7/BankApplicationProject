@@ -20,16 +20,16 @@
       <![CDATA[Login to application with invalid LOGIN invalid and invalid PASSWORD invalid]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-08-26T17:48:17Z" name="Default suite" finished-at="2022-08-26T17:48:52Z" duration-ms="34418">
+  <suite started-at="2022-08-29T23:52:37Z" name="Suite" finished-at="2022-08-29T23:52:54Z" duration-ms="16329">
     <groups>
     </groups>
-    <test started-at="2022-08-26T17:48:17Z" name="Default test" finished-at="2022-08-26T17:48:52Z" duration-ms="34418">
+    <test started-at="2022-08-29T23:52:37Z" name="Test" finished-at="2022-08-29T23:52:54Z" duration-ms="16329">
       <class name="com.az.Test.VerifyLoginSection">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.az.Test.VerifyLoginSection@63787180]" started-at="2022-08-26T19:48:17Z" name="setUpClass" finished-at="2022-08-26T19:48:21Z" duration-ms="3469" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.az.Test.VerifyLoginSection@63787180]" started-at="2022-08-30T01:52:37Z" name="setUpClass" finished-at="2022-08-30T01:52:40Z" duration-ms="3010" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="verifyloginSection()[pri:0, instance:com.az.Test.VerifyLoginSection@63787180]" started-at="2022-08-26T19:48:21Z" name="verifyloginSection" finished-at="2022-08-26T19:48:50Z" duration-ms="29751" status="PASS">
+        <test-method signature="verifyloginSection()[pri:0, instance:com.az.Test.VerifyLoginSection@63787180]" started-at="2022-08-30T01:52:40Z" name="verifyloginSection" finished-at="2022-08-30T01:52:53Z" duration-ms="12536" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login to application with LOGIN mngr433095 and PASSWORD rArYsar]]>
@@ -51,7 +51,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- verifyloginSection -->
-        <test-method is-config="true" signature="captureScreenShotOnFailure(org.testng.ITestResult)[pri:0, instance:com.az.Test.VerifyLoginSection@63787180]" started-at="2022-08-26T19:48:50Z" name="captureScreenShotOnFailure" finished-at="2022-08-26T19:48:50Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="captureScreenShotOnFailure(org.testng.ITestResult)[pri:0, instance:com.az.Test.VerifyLoginSection@63787180]" started-at="2022-08-30T01:52:53Z" name="captureScreenShotOnFailure" finished-at="2022-08-30T01:52:53Z" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -62,11 +62,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenShotOnFailure -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.az.Test.VerifyLoginSection@63787180]" started-at="2022-08-26T19:48:50Z" name="tearDownClass" finished-at="2022-08-26T19:48:52Z" duration-ms="1178" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.az.Test.VerifyLoginSection@63787180]" started-at="2022-08-30T01:52:53Z" name="tearDownClass" finished-at="2022-08-30T01:52:54Z" duration-ms="768" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- com.az.Test.VerifyLoginSection -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

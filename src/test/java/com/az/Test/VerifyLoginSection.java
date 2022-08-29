@@ -91,7 +91,7 @@ public class VerifyLoginSection {
 	public void tearDownClass() throws Exception {
 		test.closeBrowserSession();
 		System.out.println("###############################################################################");
-		System.out.println("############################################################################### \n\n");
+		System.out.println("##########################     TEST ENDED    ##################################################### \n\n");
 	}
 
 }
