@@ -14,6 +14,7 @@ import org.testng.Assert;
 import com.az.CoreTestBase.TestSessionInitiator;
 import com.az.PageObjects.DepositPageUI;
 import com.az.Utilities.StringMatcher;
+import com.relevantcodes.extentreports.LogStatus;
 /** AMB Test import */
 import com.az.PageObjects.AddNewCustomerPageUI;
 import com.az.PageObjects.BankHomePageUI;
@@ -78,7 +79,7 @@ public class BankHomePageAction {
 		bankLoginPg.get_Btn_login().click();
 		bankLoginPg.verifyPageTitle("Guru99 Bank Manager HomePage");
 		bankLoginPg.reportLog("Login to application with LOGIN " + userName + " and PASSWORD " + password);
-		
+		TestSessionInitiator.extentTestChild.log(LogStatus.INFO, "...Get to start activity successfully!");
 	}
 	
 public void loginToBankApplicationWithInvalidID(String userName, String password) {		
@@ -97,7 +98,7 @@ public void loginToBankApplicationWithInvalidID(String userName, String password
 		//StringMatcher.match(txt, "User or Password is not valid", false);
 		//bankLoginPg.verifyPageTitle("Guru99 Bank Manager HomePage");
 		bankLoginPg.reportLog("Login to application with invalid LOGIN " + userName + " and PASSWORD " + password);
-		
+		TestSessionInitiator.extentTestChild.log(LogStatus.INFO, "...Get to start activity successfully!");
 	}
 	
 public void loginToBankApplicationWithInvalidPassword(String userName, String password) {		
@@ -115,8 +116,11 @@ public void loginToBankApplicationWithInvalidPassword(String userName, String pa
 	StringMatcher.match(txt, "User or Password is not valid", false);
 	//bankLoginPg.verifyPageTitle("Guru99 Bank Manager HomePage");
 	bankLoginPg.reportLog("Login to application with LOGIN " + userName + " and invalid PASSWORD " + password);
+	TestSessionInitiator.extentTestChild.log(LogStatus.INFO, "...Get to start activity successfully!");
 	
-}public void loginToBankApplicationWithInvalidIDAndPassword(String userName, String password) {		
+}
+
+public void loginToBankApplicationWithInvalidIDAndPassword(String userName, String password) {		
 	
 	bankLoginPg.txtLoginTxtBox.sendKeys(userName);
 	bankLoginPg.txtPasswordTxtBox.sendKeys(password);
@@ -130,13 +134,14 @@ public void loginToBankApplicationWithInvalidPassword(String userName, String pa
 	driver.switchTo().alert().accept();
 	StringMatcher.match(txt, "User or Password is not valid", false);
 	bankLoginPg.reportLog("Login to application with invalid LOGIN " + userName + " and invalid PASSWORD " + password);
-	
+	TestSessionInitiator.extentTestChild.log(LogStatus.INFO, "...Get to start activity successfully!");
 }
 
    public void verifyUserID(String userId) {
 	 
 	  Assert.assertEquals(bankHomePg.txt_UserId.getText(), "Manger Id : "+userId);
 	  bankLoginPg.reportLog(bankHomePg.txt_UserId.getText()+ " EQUAL TO" + "Manger Id : "+userId);	  
+	  TestSessionInitiator.extentTestChild.log(LogStatus.INFO, "...Get to start activity successfully!");
    }
 	
 	

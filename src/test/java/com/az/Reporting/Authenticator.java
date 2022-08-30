@@ -8,7 +8,7 @@ import javax.mail.PasswordAuthentication;
 /**
  * The Class Authenticator.
  */
-class Authenticator extends javax.mail.Authenticator {
+public class Authenticator extends javax.mail.Authenticator {
 
 	/** The authentication. */
 	private PasswordAuthentication authentication;
@@ -28,7 +28,7 @@ class Authenticator extends javax.mail.Authenticator {
 	/* (non-Javadoc)
 	 * @see javax.mail.Authenticator#getPasswordAuthentication()
 	 */
-	protected PasswordAuthentication getPasswordAuthentication() {
+	public PasswordAuthentication getPasswordAuthentication() {
 		return authentication;
 	}
 }

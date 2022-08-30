@@ -23,11 +23,12 @@ import org.testng.ITestResult;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.az.Utilities.WebEventListener;
 import com.az.lib.DepositPageAction;
+import com.az.Utilities.ExtentManager;
 import com.az.lib.AddNewCustomerPageAction;
 import com.az.lib.BankHomePageAction;
 
@@ -75,6 +76,9 @@ public class TestSessionInitiator {
 	Map<String, Object> chromeOptions = null;
 	/** The capabilities. */
 	DesiredCapabilities capabilities;
+	public static ExtentReports rep = ExtentManager.getInstance();
+	public static ExtentTest extentTest;
+	public static ExtentTest extentTestChild;
 
 	/**
 	 * Instantiates a new test session initiator.
@@ -89,7 +93,7 @@ public class TestSessionInitiator {
 		_getSessionConfig();
 		_configureBrowser();
 		_initPage();
-
+		extentTestChild = new ExtentTest("Tests", "test");
 	}
 	
 	/**
@@ -102,6 +106,7 @@ public class TestSessionInitiator {
 		appbaseurl = getYamlValue("url");
 	//	applicationpath = appbaseurl;
 		timeout = Integer.parseInt(getYamlValue("selenium.timeout"));
+		
 	}
 	
 
