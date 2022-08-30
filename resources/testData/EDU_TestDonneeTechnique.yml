@@ -7,7 +7,7 @@ selenium:
     remote:
         host: http://192.168.30.212:5566/wd/hub
     #   port: 8443
-    browser: firefox
+    browser: chrome
             
             
     driverpath: "./src/test/resources/seleniumdriver/"
