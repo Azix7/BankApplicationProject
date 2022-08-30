@@ -44,7 +44,8 @@ public class WebDriverFactory {
 	 */
 	public static WebDriver getDriver(Map<String, Object> seleniumconfig) {
 		seleniumconfig = (Map<String, Object>) seleniumconfig.get("selenium");
-		if(System.getenv("browser")!=null && !System.getenv("browser").isEmpty()&& System.getenv("server")!=null && !System.getenv("server").isEmpty()){
+	//	if(System.getenv("browser")!=null && !System.getenv("browser").isEmpty()&& System.getenv("society")!=null && !System.getenv("society").isEmpty()){
+		if(System.getenv("browser")!=null && !System.getenv("browser").isEmpty()){
 			browser = System.getenv("browser");	
 		//	server = System.getenv("server")
 		//	server = System.getenv("server");
@@ -64,7 +65,7 @@ public class WebDriverFactory {
 	//	System.setProperty("society", society);
 		
 		
-		browser = System.getProperty("browser", seleniumconfig.get("browser").toString());
+	//	browser = System.getProperty("browser", seleniumconfig.get("browser").toString());
 		
 		if (seleniumconfig.get("server").toString().equalsIgnoreCase("local")) {
 			if (browser.equalsIgnoreCase("firefox")) {
