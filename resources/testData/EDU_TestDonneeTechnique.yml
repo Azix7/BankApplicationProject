@@ -51,6 +51,19 @@ AddDonneeTechnique:
   CodeArticle : AMB A
   
   
+addCustomer:
+
+  gender: male
+  customerName: Aziz Imjrane
+  dob: 01/01/1988
+  address: 98, Lot la belle vue casa
+  city: Casablanca
+  state: Sidi maarof
+  pin: "9889"
+  phone: 0989767856
+  email: aziz.m.imjrane@gmail.com
+  password: PasswordCustomer1
+  
   
   
   

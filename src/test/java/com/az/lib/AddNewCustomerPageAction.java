@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 import com.az.PageObjects.BasePage;
 import com.az.PageObjects.DepositPageUI;
+import com.relevantcodes.extentreports.LogStatus;
+import com.az.CoreTestBase.TestSessionInitiator;
 import com.az.PageObjects.AddNewCustomerPageUI;
 import com.az.PageObjects.BankHomePageUI;
 import com.az.PageObjects.BankLoginPageUI;
@@ -45,6 +47,30 @@ public class AddNewCustomerPageAction {
 		 */
 		
 	
+	 public void get_AddNewCustomer(String gender, String customerName, String dateOfBirth, String address, String city,
+			 String state, String pin, String mobilePhone, String email, String password) {
+		 
+		 bankHomepg.waitForDomToLoad();
+		 addNewCustomerPg.get_BtnAddCustomer().click();
+		 addNewCustomerPg.txtCustomerNameTxtBox.sendKeys(customerName);	
+		 if (gender == "male") {
+		 addNewCustomerPg.get_radioBtnMale().click();
+		 }else {
+			 addNewCustomerPg.get_radioBtnFemale().click();
+		 }
+		 addNewCustomerPg.txtDateOfBirthTxtBox.sendKeys(dateOfBirth);
+		 addNewCustomerPg.txtAdressTxtBox.sendKeys(address);
+		 addNewCustomerPg.txtCityTxtBox.sendKeys(city);
+		 addNewCustomerPg.txtStateTxtBox.sendKeys(state);
+		 addNewCustomerPg.txtPinTxtBox.sendKeys(pin);
+		 addNewCustomerPg.txtMobilePhoneTxtBox.sendKeys(mobilePhone);
+		 addNewCustomerPg.txtEmailTxtBox.sendKeys(email);
+		 addNewCustomerPg.txtPasswordTxtBox.sendKeys(password);
+		 addNewCustomerPg.get_BtnSubmit().click();
+//		 bankLoginPg.reportLog("Login to application with LOGIN " + userName + " and PASSWORD " + password);
+			TestSessionInitiator.extentTestChild.log(LogStatus.INFO, "...Get to CUSTOMER PAGE successfully!");
+	 }
+	 
 	/*	public void  get_Donnee_Technique_link( String donnerTechnique,String code, String CodeArticle) {
 			bankHomepg.waitForDomToLoad();
 			//sylobTechniquePg.txt_lancher.sendKeys(parametresociete);

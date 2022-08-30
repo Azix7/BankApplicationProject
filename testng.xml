@@ -9,6 +9,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.az.Test.VerifyLoginSection"/>
+      <class name="com.az.Test.AddNewCustomer"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

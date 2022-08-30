@@ -49,7 +49,7 @@ public class TestSessionInitiator {
 	public BankHomePageAction bankHome;
 	
 	/** The sylob donnee technique */
-    public AddNewCustomerPageAction sylobDonneeTechnique;
+    public AddNewCustomerPageAction addNewCustomer;
     
 	/** The e driver. */
 	private EventFiringWebDriver e_driver;
@@ -150,7 +150,7 @@ public class TestSessionInitiator {
 	private void _initPage() {
 		bankHome = new BankHomePageAction(driver);
 		//sylobArticles = new SylobArticlesPageAction(driver);
-		sylobDonneeTechnique = new AddNewCustomerPageAction(driver);
+		addNewCustomer = new AddNewCustomerPageAction(driver);
 	}
 	
 	/**

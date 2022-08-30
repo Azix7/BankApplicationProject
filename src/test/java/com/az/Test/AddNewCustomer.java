@@ -58,7 +58,7 @@ public class AddNewCustomer {
 	/** The activity name. */
 	String activityName;
 	String productID;
-	String dataFile = "EDU_TestData.yml";
+	String dataFile = "EDU_TestDonneeTechnique.yml";
 	
 	/**
 	 * Sets the up class.
@@ -81,11 +81,11 @@ public class AddNewCustomer {
 	 *             the file not found exception
 	 */
 	public void verifyloginSection() throws FileNotFoundException {
-
 		test.launchUrl(getYamlValue("url"));
 		test.bankHome.loginToBankApplication(getYamlValue("loginInfo.username"),
 				getYamlValue("loginInfo.password"));
-				
+		test.bankHome.verifyUserID(getYamlValue("loginInfo.username"));
+		
 	}
 
 	/**
@@ -94,6 +94,12 @@ public class AddNewCustomer {
 	@Test(dependsOnMethods = "verifyloginSection")
 	public void addNewCustomer(){
         
+		test.addNewCustomer.get_AddNewCustomer(getYamlValue("addCustomer.gender"),getYamlValue("addCustomer.customerName"),
+				getYamlValue("addCustomer.dob"),getYamlValue("addCustomer.address"),
+				getYamlValue("addCustomer.city"),getYamlValue("addCustomer.state"),
+				getYamlValue("addCustomer.pin"),getYamlValue("addCustomer.phone"),
+				getYamlValue("addCustomer.email"),getYamlValue("addCustomer.password"));
+		
 		/*test.sylobArticles.Get_To_Add_Articles();
 		test.sylobArticles.Select_Unite_Gestion_From_DrpDown((getYamlValue("AddArticleFlow2.UniteDeGestion3")));
 		test.sylobArticles.Fill_Txt_Boxes_Add_Article_Form(getYamlValue("AddArticleFlow2.Code"),
@@ -116,13 +122,13 @@ public class AddNewCustomer {
 	/**
 	 * TC 003 add Create Operation.
 	 */
-	@Test(dependsOnMethods = "addNewCustomer")
-	public void TC003_VerifyCustomerCreated(){
+	//@Test(dependsOnMethods = "addNewCustomer")
+	//public void TC003_VerifyCustomerCreated(){
 	
 	//	test.sylobArticles.get_txt_msg();		
 	//	test.sylobArticles.get_Verify_Article_Existance(getYamlValue("AddArticleFlow2.Code"));	      	  
 	    
-	}
+	//}
 	
 	/**
 	 * Inits the.

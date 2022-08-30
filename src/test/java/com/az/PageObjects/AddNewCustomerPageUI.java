@@ -20,7 +20,41 @@ public class AddNewCustomerPageUI extends BasePage{
 		this.driver = driver;
 	}
 	
-
-
+	@FindBy(xpath = "//input[@name='name']") 
+	public WebElement txtCustomerNameTxtBox;
+	@FindBy(xpath = "//input[@id='dob']") 
+	public WebElement txtDateOfBirthTxtBox;
+	@FindBy(xpath = "//textarea[@name='addr']") 
+	public WebElement txtAdressTxtBox;
+	@FindBy(xpath = "//input[@name='city']") 
+	public WebElement txtCityTxtBox;
+	@FindBy(xpath = "//input[@name='state']") 
+	public WebElement txtStateTxtBox;
+	@FindBy(xpath = "//input[@name='pinno']") 
+	public WebElement txtPinTxtBox;
+	@FindBy(xpath = "//input[@name='telephoneno']") 
+	public WebElement txtMobilePhoneTxtBox;
+	@FindBy(xpath = "//input[@name='emailid']") 
+	public WebElement txtEmailTxtBox;
+	@FindBy(xpath = "//input[@name='password']") 
+	public WebElement txtPasswordTxtBox;
+	
+	
+	public WebElement get_BtnAddCustomer() {
+		return expWait.getWhenClickable(By.xpath("//a[normalize-space()='New Customer']"), 10);
+	}
+	
+	public WebElement get_radioBtnMale() {
+		return expWait.getWhenClickable(By.xpath("//input[@value='m']"), 10);
+	}
+	public WebElement get_radioBtnFemale() {
+		return expWait.getWhenClickable(By.xpath("//input[@value='f']"), 10);
+	}
+	public WebElement get_BtnSubmit() {
+		return expWait.getWhenClickable(By.xpath("//input[@type='submit']"), 10);
+	}
+	public WebElement get_BtnReset() {
+		return expWait.getWhenClickable(By.xpath("//input[@value='reset']"), 10);
+	}
 		
 }
