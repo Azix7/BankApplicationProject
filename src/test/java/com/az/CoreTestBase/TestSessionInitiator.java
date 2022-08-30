@@ -25,7 +25,7 @@ import org.testng.annotations.BeforeTest;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+//import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.az.Utilities.WebEventListener;
 import com.az.lib.DepositPageAction;
 import com.az.Utilities.ExtentManager;
@@ -106,7 +106,7 @@ public class TestSessionInitiator {
 		appbaseurl = getYamlValue("url");
 	//	applicationpath = appbaseurl;
 		timeout = Integer.parseInt(getYamlValue("selenium.timeout"));
-		
+		extentTestChild = new ExtentTest("Tests", "test");
 	}
 	
 
