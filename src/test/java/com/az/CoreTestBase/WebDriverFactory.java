@@ -44,6 +44,26 @@ public class WebDriverFactory {
 	 */
 	public static WebDriver getDriver(Map<String, Object> seleniumconfig) {
 		seleniumconfig = (Map<String, Object>) seleniumconfig.get("selenium");
+		if(System.getenv("browser")!=null && !System.getenv("browser").isEmpty()&& System.getenv("server")!=null && !System.getenv("server").isEmpty()){
+			browser = System.getenv("browser");	
+		//	server = System.getenv("server")
+		//	server = System.getenv("server");
+			System.out.println("browser ------------------------------>"+browser);
+		//    System.out.println("server ------------------------------>"+server);
+		//	if(society.equals("S9_5_QA_AZIZ")){
+			//	societyType="multi";
+					//	System.setProperty("societyType", societyType);
+				
+		//	}
+		}else {
+		//  browser =System.getProperty("browser");		
+			browser = System.getProperty("browser", seleniumconfig.get("browser").toString());
+		//	society = System.getProperty("society", seleniumconfig.get("society").toString());
+		}
+		System.setProperty("browser", browser);
+	//	System.setProperty("society", society);
+		
+		
 		browser = System.getProperty("browser", seleniumconfig.get("browser").toString());
 		
 		if (seleniumconfig.get("server").toString().equalsIgnoreCase("local")) {
