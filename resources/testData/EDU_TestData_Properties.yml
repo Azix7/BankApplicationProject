@@ -1,0 +1,48 @@
+SUITE_NAME: Test
+
+TEST_NG_CONFIG_FILE: TestNG.xml 
+selenium:
+    server: local
+    remote:
+        host: http://192.168.30.212:5566/wd/hub
+    #   port: 8443
+
+    browser: chrome
+    society: S9_5_QA_AZIZ
+    #society: S9_5_QA_HADIA
+      
+    driverpath: "src/test/resources/seleniumdriver/"
+
+
+    timeout: 60
+    
+url: https://s9-5-qa.sylob.local:8443/CochiseWeb/start.do
+
+testenv: qa
+
+##########################################################################################
+#
+#******* Testdata for Login and password*******
+#
+########################################################################################## 
+
+loginInfo:
+  
+    username: sylob
+    password: 'qa@auto'
+    #societe: S9_5_QA_HADIA
+
+    #password: "s95-craxeret#3"
+    #societe: S9_5_QA_AZIZ
+
+
+##########################################################################################
+#
+#******* Configurations for Email Module  *******
+#
+##########################################################################################
+
+results:
+   sendEmail: "no"
+   recipients: 
+       recipient1: "aziz.m.imjrane@gmail.com"
