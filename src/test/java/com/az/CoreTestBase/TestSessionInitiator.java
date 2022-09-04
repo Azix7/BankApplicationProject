@@ -80,7 +80,7 @@ public class TestSessionInitiator {
 	public static ExtentReports rep = ExtentManager.getInstance();
 	public static ExtentTest extentTest;
 	public static ExtentTest extentTestChild;
-  //  public static ExcelReader excel;
+    public static ExcelReader excel;
 	/**
 	 * Instantiates a new test session initiator.
 	 * 
@@ -95,7 +95,7 @@ public class TestSessionInitiator {
 		_configureBrowser();
 		_initPage();
 		extentTestChild = new ExtentTest("Tests", "test");
-		//excel = new ExcelReader(System.getProperty("user.dir")+"/resources/testData/Book.xlsx");
+		excel = new ExcelReader(System.getProperty("user.dir")+"/resources/testData/Book.xlsx");
 	}
 	
 	/**
