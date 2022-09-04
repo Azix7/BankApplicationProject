@@ -15,13 +15,16 @@ import static com.az.Utilities.YamlReader.getYamlValue;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -31,15 +34,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.az.CoreTestBase.TestSessionInitiator;
 import com.az.PageObjects.BasePage;
 import com.az.Utilities.YamlReader;
-
-
-
+import com.az.Utilities.XLUtility;
 import com.az.Test.BaseTest;
 /**
  * The Class SylobAddNewArticle.
@@ -87,19 +89,43 @@ public class AddNewCustomer {
 		test.bankHome.verifyUserID(getYamlValue("loginInfo.username"));
 		
 	}
+	    	
+    	@DataProvider(name="dp")
+    	public String[][] getData(Method m) throws IOException {
 
+    		String sheetName = m.getName();
+    		
+    		
+    		String path = System.getProperty("user.dir")+"/resources/testData/Book.xlsx";
+    		XLUtility xlUtil = new XLUtility(path);
+
+    		int totalRows = xlUtil.getRowCount(sheetName);
+    		int totalCols = xlUtil.getCellCount(sheetName,1);
+    		
+    		String loginData [][] = new String[totalRows ][totalCols];
+    		
+    		for (int i = 1; i < totalRows; i++) { // 2
+    	    	for (int j = 0; j < totalCols; j++) {
+    	    		
+    	    		loginData [i-1][j]=	xlUtil.getCellData(sheetName, i, j);
+    	   }
+
+    	}  
+    		return loginData;
+    	}   
+	
+	
 	/**
 	 * TC 002 add new article.
+	 * @throws InterruptedException 
 	 */
-	@Test(dependsOnMethods = "verifyloginSection")
-	public void addNewCustomer(){
+	@Test(dependsOnMethods = "verifyloginSection", dataProvider = "dp")
+	public void addNewCustomer(String customerName,String gender, String dateOfBirth, String address, String city,
+			 String state, String pin, String mobilePhone, String email, String password) throws InterruptedException{
         
-		test.addNewCustomer.get_AddNewCustomer(getYamlValue("addCustomer.gender"),getYamlValue("addCustomer.customerName"),
-				getYamlValue("addCustomer.dob"),getYamlValue("addCustomer.address"),
-				getYamlValue("addCustomer.city"),getYamlValue("addCustomer.state"),
-				getYamlValue("addCustomer.pin"),getYamlValue("addCustomer.phone"),
-				getYamlValue("addCustomer.email"),getYamlValue("addCustomer.password"));
-		
+		test.addNewCustomer.get_AddNewCustomer(customerName,gender,dateOfBirth,address,city,
+				state,pin,mobilePhone,email,password);
+		Thread.sleep(10000);
 		/*test.sylobArticles.Get_To_Add_Articles();
 		test.sylobArticles.Select_Unite_Gestion_From_DrpDown((getYamlValue("AddArticleFlow2.UniteDeGestion3")));
 		test.sylobArticles.Fill_Txt_Boxes_Add_Article_Form(getYamlValue("AddArticleFlow2.Code"),

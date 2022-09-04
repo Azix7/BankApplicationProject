@@ -47,7 +47,7 @@ public class AddNewCustomerPageAction {
 		 */
 		
 	
-	 public void get_AddNewCustomer(String gender, String customerName, String dateOfBirth, String address, String city,
+	 public void get_AddNewCustomer(String customerName,String gender, String dateOfBirth, String address, String city,
 			 String state, String pin, String mobilePhone, String email, String password) {
 		 
 		 bankHomepg.waitForDomToLoad();

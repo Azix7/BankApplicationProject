@@ -28,6 +28,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 //import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.az.Utilities.WebEventListener;
 import com.az.lib.DepositPageAction;
+import com.az.Utilities.ExcelReader;
 import com.az.Utilities.ExtentManager;
 import com.az.lib.AddNewCustomerPageAction;
 import com.az.lib.BankHomePageAction;
@@ -79,7 +80,7 @@ public class TestSessionInitiator {
 	public static ExtentReports rep = ExtentManager.getInstance();
 	public static ExtentTest extentTest;
 	public static ExtentTest extentTestChild;
-
+  //  public static ExcelReader excel;
 	/**
 	 * Instantiates a new test session initiator.
 	 * 
@@ -94,6 +95,7 @@ public class TestSessionInitiator {
 		_configureBrowser();
 		_initPage();
 		extentTestChild = new ExtentTest("Tests", "test");
+		//excel = new ExcelReader(System.getProperty("user.dir")+"/resources/testData/Book.xlsx");
 	}
 	
 	/**
